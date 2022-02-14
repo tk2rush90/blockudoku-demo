@@ -22,12 +22,12 @@
 
 <div class="next">
   <div
+    (mousedown)="dragStartBlock($event, _block)"
+    (touchstart)="dragStartBlock($event, _block)"
     *ngFor="let block of nextBlocks"
     class="block">
     <app-block
       #_block
-      (mousedown)="dragStartBlock($event, _block)"
-      (touchstart)="dragStartBlock($event, _block)"
       [data]="block"
       [dragging]="draggingBlock === _block"></app-block>
   </div>

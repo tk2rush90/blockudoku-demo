@@ -23,10 +23,11 @@
 
     @include screen-under(767px) {
       position: absolute;
+      transform: translate(-50%, -150%);
     }
 
     @include screen-under(424px) {
-      transform: translate(-50%, -50%) scale(calc(3 / 4));
+      transform: translate(-50%, -150%) scale(calc(3 / 4));
     }
 
     .block.fill {
