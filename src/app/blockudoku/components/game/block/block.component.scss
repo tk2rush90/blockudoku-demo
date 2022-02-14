@@ -1,0 +1,46 @@
+@import "mixins";
+@import "props";
+
+// container
+:host {
+  display: grid;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+  cursor: grab;
+
+  @include screen-under(767px) {
+    transform: scale(.7);
+  }
+
+  @include screen-under(424px) {
+    transform: scale(.5);
+  }
+
+  &.dragging {
+    position: fixed;
+    cursor: grabbing;
+    transform: translate(-50%, -50%);
+
+    @include screen-under(767px) {
+      position: absolute;
+    }
+
+    @include screen-under(424px) {
+      transform: translate(-50%, -50%) scale(calc(3 / 4));
+    }
+
+    .block.fill {
+      transform: scale(.8);
+      box-shadow: 0 0 10px rgba($black, .2);
+    }
+  }
+}
+
+.block {
+  background-color: transparent;
+  transition: transform .1s;
+
+  &.fill {
+    background-color: $cornflower-blue;
+  }
+}

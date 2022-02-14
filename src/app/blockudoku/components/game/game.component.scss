@@ -1,0 +1,55 @@
+@import "mixins";
+@import "props";
+
+// container
+:host {
+  display: block;
+}
+
+button {
+  @include rect(150px, 40px);
+  font-size: 18px;
+  background-color: $cornflower-blue;
+  color: $white;
+  margin: 0 auto;
+  display: block;
+
+  @include screen-under(424px) {
+    @include rect(130px, 30px);
+    font-size: 14px;
+  }
+}
+
+.point {
+  @include flex(center, center, column);
+  margin: 50px 0;
+  font-size: 20px;
+  font-weight: 500;
+
+  @include screen-under(767px) {
+    font-size: 16px;
+  }
+
+  @include screen-under(424px) {
+    margin: 20px 0;
+    font-size: 14px;
+  }
+}
+
+.next {
+  @include flex(center, center);
+  margin: 50px auto;
+}
+
+.block {
+  @include flex(center, center);
+  @include box($block-size * 5);
+
+  @include screen-under(767px) {
+    @include box($block-size * .7 * 5);
+  }
+
+  @include screen-under(424px) {
+    @include box($block-size * .5 * 5);
+  }
+}

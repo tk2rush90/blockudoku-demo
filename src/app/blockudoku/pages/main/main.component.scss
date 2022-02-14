@@ -1,0 +1,16 @@
+@import "mixins";
+@import "props";
+
+// container
+:host {
+  @include padding(100px 0);
+  display: block;
+
+  @include screen-under(767px) {
+    @include padding(50px 0);
+  }
+
+  @include screen-under(424px) {
+    @include padding(20px 0);
+  }
+}

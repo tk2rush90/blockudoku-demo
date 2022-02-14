@@ -1,0 +1,7 @@
+<ng-container *ngFor="let row of data">
+  <div
+    #block
+    *ngFor="let _block of row"
+    [class.fill]="_block === 1"
+    class="block"></div>
+</ng-container>

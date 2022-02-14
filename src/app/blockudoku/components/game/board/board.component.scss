@@ -1,0 +1,101 @@
+@import "mixins";
+@import "props";
+
+:host {
+  @include flex(null, center);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: $block-size $block-size $block-size $block-size $block-size $block-size $block-size $block-size $block-size;
+  grid-template-rows: $block-size $block-size $block-size $block-size $block-size $block-size $block-size $block-size $block-size;
+  grid-row-gap: 1px;
+  grid-column-gap: 1px;
+
+  @include screen-under(424px) {
+    $block-size-2: $block-size * calc(3 / 4);
+
+    grid-template-columns: $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2;
+    grid-template-rows: $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2;
+  }
+}
+
+.block {
+  background-color: rgba($black, .2);
+  animation: init forwards .1s;
+
+  // first block
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6),
+  &:nth-child(13),
+  &:nth-child(14),
+  &:nth-child(15),
+  &:nth-child(22),
+  &:nth-child(23),
+  &:nth-child(24),
+    // second block
+  &:nth-child(28),
+  &:nth-child(29),
+  &:nth-child(30),
+  &:nth-child(37),
+  &:nth-child(38),
+  &:nth-child(39),
+  &:nth-child(46),
+  &:nth-child(47),
+  &:nth-child(48),
+    // third block
+  &:nth-child(34),
+  &:nth-child(35),
+  &:nth-child(36),
+  &:nth-child(43),
+  &:nth-child(44),
+  &:nth-child(45),
+  &:nth-child(52),
+  &:nth-child(53),
+  &:nth-child(54),
+    // forth block
+  &:nth-child(58),
+  &:nth-child(59),
+  &:nth-child(60),
+  &:nth-child(67),
+  &:nth-child(68),
+  &:nth-child(69),
+  &:nth-child(76),
+  &:nth-child(77),
+  &:nth-child(78),
+  {
+    background-color: rgba($black, .3);
+  }
+
+  &.fill {
+    animation: filling forwards .1s;
+  }
+
+  &.contain {
+    background-color: rgba($cornflower-blue, .3);
+  }
+}
+
+@keyframes init {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes filling {
+  0% {
+    transform: scale(0);
+    background-color: rgba($black, .2);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: $cornflower-blue;
+  }
+}

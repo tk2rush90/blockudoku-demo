@@ -1,0 +1,34 @@
+<button (click)="restart()">
+  Restart
+</button>
+
+<div class="point">
+  <div>
+    <span>Points:</span> {{points | number: '0.0-0'}}
+  </div>
+
+  <div>
+    <span>Last Added Points:</span> {{lastAddedPoints}}
+  </div>
+
+  <div>
+    <span>Combo:</span> {{comboCounts}}
+  </div>
+</div>
+
+<app-board
+  (increasePoint)="onIncreasePoints($event)"
+  [comboCounts]="comboCounts"></app-board>
+
+<div class="next">
+  <div
+    *ngFor="let block of nextBlocks"
+    class="block">
+    <app-block
+      #_block
+      (mousedown)="dragStartBlock($event, _block)"
+      (touchstart)="dragStartBlock($event, _block)"
+      [data]="block"
+      [dragging]="draggingBlock === _block"></app-block>
+  </div>
+</div>

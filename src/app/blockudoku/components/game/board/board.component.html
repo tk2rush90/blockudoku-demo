@@ -1,0 +1,13 @@
+<ng-container *ngIf="board">
+  <div class="board">
+    <ng-container *ngFor="let row of board; index as rowIndex; trackBy: trackByBlock">
+      <div
+        #block
+        *ngFor="let _block of row; index as columnIndex; trackBy: trackByBlock"
+        [attr.column]="columnIndex"
+        [attr.row]="rowIndex"
+        [class.fill]="_block === 1"
+        class="block"></div>
+    </ng-container>
+  </div>
+</ng-container>
