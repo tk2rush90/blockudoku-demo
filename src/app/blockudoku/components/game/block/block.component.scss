@@ -27,15 +27,15 @@
 
     @include screen-under(767px) {
       position: absolute;
-      transform: translate(-50%, -150px);
+      transform: translate(-50%, calc(-100% - 100px));
     }
 
     @include screen-under(424px) {
-      transform: translate(-50%, -150px) scale(1);
+      transform: translate(-50%, calc(-100% - 100px)) scale(1);
     }
 
     @include screen-under(374px) {
-      transform: translate(-50%, -150px) scale(calc(4 / 5));
+      transform: translate(-50%, calc(-100% - 100px)) scale(calc(4 / 5));
     }
 
     .block.fill {
