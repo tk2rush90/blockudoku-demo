@@ -12,8 +12,8 @@
   grid-row-gap: 1px;
   grid-column-gap: 1px;
 
-  @include screen-under(424px) {
-    $block-size-2: $block-size * calc(3 / 4);
+  @include screen-under(374px) {
+    $block-size-2: $block-size * calc(4 / 5);
 
     grid-template-columns: $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2;
     grid-template-rows: $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2 $block-size-2;

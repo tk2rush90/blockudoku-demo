@@ -50,6 +50,10 @@ button {
   }
 
   @include screen-under(424px) {
+    @include box($block-size * .6 * 5);
+  }
+
+  @include screen-under(374px) {
     @include box($block-size * .5 * 5);
   }
 }

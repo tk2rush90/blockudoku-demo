@@ -13,6 +13,10 @@
   }
 
   @include screen-under(424px) {
+    transform: scale(.6);
+  }
+
+  @include screen-under(374px) {
     transform: scale(.5);
   }
 
@@ -27,7 +31,11 @@
     }
 
     @include screen-under(424px) {
-      transform: translate(-50%, -150px) scale(calc(3 / 4));
+      transform: translate(-50%, -150px) scale(1);
+    }
+
+    @include screen-under(374px) {
+      transform: translate(-50%, -150px) scale(calc(4 / 5));
     }
 
     .block.fill {

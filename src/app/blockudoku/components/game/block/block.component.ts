@@ -100,7 +100,7 @@ export class BlockComponent implements OnInit {
 
   @HostListener('window:resize')
   onWindowResize(): void {
-    if (window.innerWidth < 424) {
+    if (window.innerWidth < 374) {
       this._calculateGrid(30);
     } else {
       this._calculateGrid();
