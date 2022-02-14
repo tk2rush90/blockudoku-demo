@@ -29,7 +29,7 @@ export class BoardComponent implements OnInit {
   @Input() comboCounts = 0;
 
   // Emitter to increase the points.
-  @Output() increasePoint: EventEmitter<number> = new EventEmitter<number>();
+  @Output() increasePoint: EventEmitter<{ points: number, combos: number }> = new EventEmitter<{ points: number, combos: number }>();
 
   // Board block list.
   @ViewChildren('block') blockList!: QueryList<ElementRef<HTMLElement>>;
@@ -200,7 +200,10 @@ export class BoardComponent implements OnInit {
 
     const points = combos * (9 + (combos - 1));
 
-    this.increasePoint.emit(points);
+    this.increasePoint.emit({
+      points,
+      combos,
+    });
   }
 
   private _fillTheBoard(): void {

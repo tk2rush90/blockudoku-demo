@@ -42,7 +42,7 @@ button {
 }
 
 .block {
-  @include flex(center, center);
+  @include flex(center, center, null, nowrap);
   @include box($block-size * 5);
 
   @include screen-under(767px) {

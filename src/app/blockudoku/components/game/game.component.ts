@@ -68,9 +68,9 @@ export class GameComponent implements OnInit {
     this.eventListenerService.addEvent(window, 'touchmove', this._dragTheBlock, {passive: false});
   }
 
-  onIncreasePoints(points: number): void {
+  onIncreasePoints({points, combos}: { points: number, combos: number }): void {
     if (points > 0) {
-      this.comboCounts++;
+      this.comboCounts += combos;
     } else {
       this.comboCounts = 0;
     }
