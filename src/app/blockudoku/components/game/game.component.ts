@@ -70,7 +70,7 @@ export class GameComponent implements OnInit {
 
   onIncreasePoints({points, combos}: { points: number, combos: number }): void {
     if (points > 0) {
-      this.comboCounts += combos;
+      this.comboCounts = combos;
     } else {
       this.comboCounts = 0;
     }

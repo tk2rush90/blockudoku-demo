@@ -34,7 +34,7 @@ export class GameUtil {
    * Create the random block.
    */
   static createBlock(): number[][] {
-    const rand = RandomUtil.number(0, 35);
+    const rand = RandomUtil.number(0, 39);
 
     switch (rand) {
       case 0: {
@@ -291,6 +291,38 @@ export class GameUtil {
         return [
           [1, 1],
           [1, 0],
+        ];
+      }
+
+      case 35: {
+        return [
+          [1, 1, 1],
+          [0, 0, 1],
+          [0, 0, 1],
+        ];
+      }
+
+      case 36: {
+        return [
+          [1, 1, 1],
+          [1],
+          [1],
+        ];
+      }
+
+      case 37: {
+        return [
+          [1],
+          [1],
+          [1, 1, 1],
+        ];
+      }
+
+      case 38: {
+        return [
+          [0, 0, 1],
+          [0, 0, 1],
+          [1, 1, 1],
         ];
       }
 
